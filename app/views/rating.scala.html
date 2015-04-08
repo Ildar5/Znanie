@@ -1,0 +1,36 @@
+@(cities: List[Person])
+
+@main("Home") {
+
+  @navbar("rating")
+
+  <div class="container main-content">
+
+    <h1 class="text-center">Rating of users.</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Country</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      @for(city <- cities) {
+        <tr>
+          <td>@city.name</td>
+          <td>@city.description</td>
+          <td>@city.country</td>
+          <td>
+            <a href="@routes.Informations.remove(city.id.get)">
+              <button class="btn btn-danger">Delete</button>
+            </a>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+
+}

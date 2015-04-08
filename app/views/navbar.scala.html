@@ -1,0 +1,28 @@
+@(activePage: String)
+
+        <nav class="navbar navbar-inverse navbar-fixed-top cl">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="bs">
+                    <ul class="nav navbar-nav">
+                        <li class="hor-menu-cell @if(activePage == "MAIN") {active}"><a class="strong" href="@routes.Application.index()"><b class="nav-color-main">MAIN</b></a></li>
+                        <li class="@if(activePage == "Memory") {active}"><a href="@routes.Application.memory()"><b class="nav-color-main">MEMORY</b></a></li>
+                        <li class="@if(activePage == "intuition") {active}"><a href="@routes.Application.intuition()"><b class="nav-color-main">INTUITION</b></a></li>
+                        <li class="@if(activePage == "math") {active}"><a href="@routes.Application.math()"><b class="nav-color-main">MATHEMATICS</b></a></li>
+                        <li class="@if(activePage == "rating") {active}"><a href="@routes.Informations.RatingList()"><b class="nav-color-main">RatingList</b></a></li>
+                        <li class="@if(activePage == "intuition") {active}"><a href="@routes.Informations.add()"><b class="nav-color-main">ADD</b></a></li>
+                        <li class=""></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+
